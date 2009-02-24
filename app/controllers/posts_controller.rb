@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
+    @page_title = 'List of all posts'
     @post = Post.find(params[:id])
 
     respond_to do |format|
