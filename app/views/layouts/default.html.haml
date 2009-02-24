@@ -6,4 +6,15 @@
     /[if IE]
       %link{:rel => "stylesheet", :href => "/stylesheets/blueprint/ie.css", :type => "text/css", :media => "screen, projection"}
   %body
-    = yield
+    .container
+      .span-24
+        %h1 RubyMinds
+      = render :partial => "/shared/flashes"
+      .span-4
+        The first column
+      .span-16
+        = yield
+      .span-4.last
+        The right column
+      .span-24.small.quiet
+        The footer
