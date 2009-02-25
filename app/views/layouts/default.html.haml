@@ -10,14 +10,16 @@
   %body
     .container
       .span-24
-        %h1 RubyMinds
+        %h1= link_to "RubyMinds", root_path 
       = render :partial => "/shared/flashes"
-      .span-4.border
-        %h3  The first column
-      .span-16.border
+      .span-14.push-1.colborder
         %h2= @page_title
         = yield
-      .span-4.last
-        %h3 The right column
+      .span-8.last
+        %h3 What's your dangerous or controversial idea?
+        %ul
+          %li= link_to "Submit a new idea", new_post_path
       .span-24.small.quiet
-        The footer
+        &copy; 
+        = Date.today.year
+        Mike Judge. All Rights Reserved
