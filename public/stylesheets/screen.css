@@ -1,6 +1,9 @@
 /* #220101  #8c0d26 #e51a33 */
 body { background-color: #220101 }
-a { color: #e51a33 }
-.container { background-color: #8c0d26; color: #220101 }
-
+a { color: #000 }
+.container { background-color: #eeaaaa; color: #220101 }
+h1 { color: #000 }
 .object-separator { height: 1em }
+
+.post { background-color: #FFF; }
+

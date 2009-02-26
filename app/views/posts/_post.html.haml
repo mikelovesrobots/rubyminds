@@ -1,6 +1,7 @@
-%h3= post.title
-.body= post.body
-.created_at
-  Posted 
-  = time_ago_in_words post.created_at
-  Ago
+%div[post]
+  %h3= post.title
+  .body= post.body
+  .attribution
+    Posted by Anonymous 
+    = time_ago_in_words post.created_at
+    Ago
