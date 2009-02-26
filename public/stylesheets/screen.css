@@ -1,9 +1,6 @@
-/* #220101  #8c0d26 #e51a33 */
-body { background-color: #220101 }
-a { color: #000 }
-.container { background-color: #eeaaaa; color: #220101 }
-h1 { color: #000 }
-.object-separator { height: 1em }
-
-.post { background-color: #FFF; }
-
+.tagline { text-align: center }
+.footer { text-align: center }
+body { font-size: 81.25%; font-family: georgia,'bitstream vera sans serif','lucida grande',helvetica,verdana,sans-serif }
+h1 { text-align: center }
+.date { text-align: center; color: #777; font-variant: small-caps; text-transform: capitalize; }
+.author { text-align: center; color: #777; font-variant: small-caps; text-transform: capitalize; }

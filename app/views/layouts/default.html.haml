@@ -8,18 +8,19 @@
       = stylesheet_link_tag "blueprint/ie", :media => "screen, projection"
     = stylesheet_link_tag "screen", :media => "screen, projection"
   %body
-    .container
-      .span-24
-        %h1= link_to "RubyMinds", root_path 
-      = render :partial => "/shared/flashes"
-      .span-14.push-1.colborder
-        %h2= @page_title
-        = yield
-      .span-8.last
-        %h3 What's your dangerous or controversial idea?
-        %ul
-          %li= link_to "Submit a new idea", new_post_path
-      .span-24.small.quiet
-        &copy; 
-        = Date.today.year
-        Mike Judge. All Rights Reserved
+    %div{:id => "#{controller_name}_controller"}
+      %div{:id => "#{action_name}_action"}
+        .container
+          .span-3
+            %h2= link_to "rubyminds", root_path 
+          .span-18.tagline
+            -# %h3 What's your dangerous idea?
+          .span-3.last
+            -# = link_to "New Idea", new_post_path
+          = render :partial => "/shared/flashes"
+          .push-2.span-20.last
+            = yield
+          .span-24.footer.quiet
+            = link_to "&copy; ", "http://creativecommons.org/licenses/by-sa/3.0/"
+            = Date.today.year
+            Site by Mike Judge. Content by Author.  All Rights Reserved
