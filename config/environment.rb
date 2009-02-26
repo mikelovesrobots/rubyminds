@@ -30,6 +30,7 @@ Rails::Initializer.run do |config|
 
   config.gem 'haml', :version => '~> 2.0.9'
   config.gem 'mislav-will_paginate', :version => '~> 2.3.7', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'BlueCloth', :version => '~> 1.0.0', :lib => 'bluecloth'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
