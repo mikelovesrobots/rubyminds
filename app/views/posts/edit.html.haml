@@ -1,0 +1,28 @@
+.span-24
+  %h1 Editing post
+.span-12
+  - form_for @post do |f|
+    = f.error_messages
+
+    %p
+      = f.label :title 
+      %br
+      = f.text_field :title
+      = live_field_preview :post_title, :title
+      
+    %p
+      = f.label :body 
+      %br
+      ~ f.text_area :body 
+    %p
+      = f.label :published
+      %br
+      = f.check_box :published
+    %p
+      = f.submit "Update"
+  = link_to 'Show', @post
+  = "|"
+  = link_to 'Back', posts_path
+.span-12.last
+  = render :partial => "/shared/wmd_preview"
+

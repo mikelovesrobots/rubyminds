@@ -1,0 +1,20 @@
+.span-24
+  <h1>New Post</h1>
+.span-12
+  = form_for(@post) do |f|
+    = f.error_messages
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+      = live_field_preview :post_title, :title
+    %p
+      = f.label :body
+      %br/
+      ~ f.text_area :body
+    %p
+      = f.submit "Create"
+  = link_to 'Back', posts_path
+
+.span-12
+  = render :partial => "/shared/wmd_preview"
