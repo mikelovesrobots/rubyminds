@@ -1,6 +1,6 @@
 %div[post]
   %h3= link_to post.title, post_path(post)
-  .body= render_markdown post.body
+  .body= post.body_cache
   .attribution
     Posted by Anonymous 
     = time_ago_in_words post.created_at
