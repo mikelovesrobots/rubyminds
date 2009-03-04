@@ -2,5 +2,9 @@
   = render :partial => "top"
   %div= @post.body_cache
 
-  = link_to 'Edit', edit_post_path(@post)
-  = link_to 'Back', posts_path
+  %div
+    %h3 Replies
+    %ul
+      - @post.replies.each do |reply|
+        %li= link_to reply.title, post_path(reply)
+    = link_to 'Post a Reply', new_post_path(:parent_id => @post.id)
