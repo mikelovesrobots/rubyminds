@@ -1,8 +1,0 @@
-%h1#title= @post.title
-- if @post.parent
-  %h3.thread-chain
-    (A reply to 
-    = link_to @post.parent.title, post_path(@post.parent)
-    )
-%h3.date= (@post.created_at || Time.now).to_date.to_formatted_s(:long_ordinal)
-%h3.author= link_to "Anonymous", "#"

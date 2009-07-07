@@ -1,5 +1,0 @@
-- [:success, :notice, :error].each do |kind|
-  - if flash[kind].present?
-    .span-24
-      - if flash[kind]
-        %div{:class => kind}= flash[kind]
