@@ -1,12 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang='en'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title><%= @page_title or raise "@page_title not set" %></title>
-    <%= javascript_include_tag :defaults %>
-    <%= stylesheet_link_tag "screen", :media => "screen, projection" %>
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>MiniCon Magazine Theme</title>
+    <meta name="description" content="MiniCon Magazine description goes here" />
+    <meta name="author" content="Your Name and Pukeko Design Studio" />
+    <meta name="keywords" content="magazine"/>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/text.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/960.css" />
+    <script type="text/javascript" src="javascripts/jquery-1.2.1.pack.js"></script>
+    <script type="text/javaScript" src="javascripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="javascripts/ATF_Antique_400-ATF_Antique_700-ATF_Antique_400.font.js"></script>
+    <script type="text/javascript" src="javascripts/cufon-config.js"></script>
+    <!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/ie7.css" />
+    <![endif]-->
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/ie6.css" />
+    <![endif]-->
   </head>
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div class="container_12">
+    <div class="grid_4 logo">
+      <h1><a href="index.htm">MiniCon Magazine</a></h1>
+    </div><!-- end .grid_4-->
+    <div class="grid_8 header">
+      <ul>
+        <li><a href="index.htm" class="current">Home</a></li>
+        <li><a href="photos.htm">Photos</a></li>
+        <li><a href="articles.htm">Articles</a></li>
+        <li><a href="news.htm">News</a></li>
+        <li><a href="about.htm">About</a></li>
+        <li><a href="contact.htm">Contact</a></li>
+      </ul>
+    </div><!-- end .grid_8-->
+    <div class="clear">&nbsp;</div>
+    <div class="home_feature clearfix">
+      <div class="home_feature_photo">
+        <a href="articles_page.htm"><img src="images/plants.jpg" alt="Plants" width="280px" height="184px" /></a>
+      </div>
+      <div class="home_feature_text">
+        <h2><a href="articles_page.htm">Lorem ipsum dolor</a></h2>
+        <h3>Sed diam nonumy eirmod tempor invidunt.</h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+      </div>
+    </div><!-- end .grid_12-->
+    <div class="clear">&nbsp;</div>
+    <div class="grid_4">
+      <h3 class="home_heading3">Welcome</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+      <h3 class="home_heading3">Latest News</h3>
+      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
+      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
+      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
+      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
+      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
+      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
+      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
+      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
+      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
+      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
+      <span class="bigLink"><a href="articles_page.htm">More News</a></span>
+      <h3 class="home_heading3">Latest Comments</h3>
+      <span class="comments_details">Posted in <strong><a href="#">Article 1</a></strong>:</span>
+      <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&#8221;</em><br />
+      by John Smith</p>
+      <span class="comments_details">Posted in <strong><a href="#">News Title  1</a></strong>:</span>
+      <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&#8221;</em><br />
+      by John Smith</p>
+      <span class="comments_details">Posted in <strong><a href="#">Photo Set 1</a></strong>:</span>
+      <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy sed diam voluptua.&#8221;</em><br />
+      by John Smith</p>
+      <span class="comments_details">Posted in <strong><a href="#">Article 2</a></strong>:</span>
+      <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&#8221;</em><br />
+      by John Smith</p>
+    </div><!-- end .grid_4-->
+    <div class="grid_8">
+      <h2 class="title">Feature Articles</h2>
+      <div class="home_article_photo">
+        <a href="articles_page.htm"><img src="images/sunset.jpg" alt="Sunset" width="140px" height="92px" class="floatLeft" /></a>
+      </div>
+      <div class="home_article_text">
+        <h3><a href="articles_page.htm">Magna aliquyam erat</a></h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+      </div>
+      <div class="home_article_photo">
+        <a href="articles_page.htm"><img src="images/chess.jpg" alt="Chess" width="140px" height="92px" class="floatLeft" /></a>
+      </div>
+      <div class="home_article_text">
+        <h3><a href="articles_page.htm">At vero eos</a></h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+      </div>
+      <div class="home_article_photo">
+        <a href="articles_page.htm"><img src="images/grass.jpg" alt="Grass" width="140px" height="92px" class="floatLeft" /></a>
+      </div>
+      <div class="home_article_text">
+        <h3><a href="articles_page.htm">Tempor invidunt ut labore et dolore</a></h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+      </div>
+      <span class="bigLink clear_soft"><a href="articles_page.htm">More Articles</a></span>
+      <div class="clear_soft"></div>
+      <h2 class="title">Latest Photos</h2>
+      <br />
+      <a href="photos_page.htm"><img src="images/plants.jpg" alt="Plants" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/chess.jpg" alt="Chess" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/grass.jpg" alt="Grass" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/field.jpg" alt="Field" width="140px" height="92px" class="home_photos_last" /></a>
+      <a href="photos_page.htm"><img src="images/sunset.jpg" alt="Sunset" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/plants.jpg" alt="Plants" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/chess.jpg" alt="Chess" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/grass.jpg" alt="Grass" width="140px" height="92px" class="home_photos_last " /></a>
+      <a href="photos_page.htm"><img src="images/field.jpg" alt="Field" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/sunset.jpg" alt="Sunset" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/plants.jpg" alt="Plants" width="140px" height="92px" class="home_photos" /></a>
+      <a href="photos_page.htm"><img src="images/chess.jpg" alt="Chess" width="140px" height="92px" class="home_photos_last " /></a>
+      <span class="bigLink"><a href="articles_page.htm">More Photos</a></span>
+    </div><!-- end .grid_8-->
+    <div class="clear">&nbsp;</div>
+    <div class="footer clearfix">
+      <div class="footer_1">
+        <h4>Latest News</h4>
+        <ul>
+          <li><a href="#">News Title</a></li>
+          <li><a href="#">News Title</a></li>
+          <li><a href="#">News Title</a></li>
+          <li><a href="#">News Title</a></li>
+          <li><a href="#">News Title</a></li>
+          <li><a href="#">News Title</a></li>
+        </ul>
+      </div><!-- end .footer_1-->
+      <div class="footer_2">
+        <h4>Site Links</h4>
+        <ul>
+          <li><a href="index.htm">Home</a></li>
+          <li><a href="photos.htm">Photos</a></li>
+          <li><a href="articles.htm">Articles</a></li>
+          <li><a href="news.htm">News</a></li>
+          <li><a href="about.htm">About</a></li>
+          <li><a href="contact.htm">Contact</a></li>
+        </ul>
+      </div><!-- end .footer_2-->
+      <div class="footer_3">
+        <h4>MiniCon Magazine</h4>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+        </ul>
+        <h4>Newsletter Signup</h4>
+        <ul>
+          <li>
+          Receive regular updates, news and competition info.<br/>
+          <input name="newsletter" type="text" value="your email address" class="footer_newsletter" />&nbsp;&nbsp;<input name="newsletter_submit" type="submit" value="Go" class="footer_newsletter_button" />
+          </li>
+        </ul>
+      </div><!-- end .footer_3-->
+      <p class="copyright">&copy; MiniCon Magazine Theme. </p>
+    </div><!-- end .footer-->
+  </div><!-- end .container_12 -->
+</body>
 </html>
