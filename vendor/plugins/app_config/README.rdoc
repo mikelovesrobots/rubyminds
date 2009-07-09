@@ -1,0 +1,29 @@
+== Summary
+Application level configuration.
+
+== Author
+Christopher J. Bottaro
+Trimmed down to just what I need, by  Cameron Booth
+
+=== Accessing the AppConfig object
+After installing this plugin, the AppConfig object will be global available.  Entries are accessed via object member notation:
+ AppConfig.my_config_entry
+Nested entries are supported:
+ AppConfig.my_section.some_entry
+
+=== Config file
+Define your config in
+ Rails.root/config/app_config.yml
+
+It will the the section called "defaults", and then it will override that with  the section that matches the Rails.env, so it should look something like this:
+
+<tt>RAILS_ROOT/config/app_config.yml:</tt>
+  defaults: 
+    something: is set to boo
+    something_else: is set to yeah
+
+  development:
+    something_else: is overridden to hell yeah
+
+  production:
+    something: is overridden to booyeah

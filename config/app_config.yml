@@ -1,0 +1,8 @@
+defaults:
+  site_name: "RubyMinds"
+ 
+development:
+
+staging:
+
+production:

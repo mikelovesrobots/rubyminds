@@ -1,0 +1,18 @@
+defaults:
+  size: 30
+  computed: <%= 1 + 2 + 3 %>
+  server: development.com
+  emails:
+    support: support@domain.com
+    webmaster: web@domain.com
+  section:
+    size: 3
+    servers: [ {name: yahoo.com}, {name: amazon.com} ]
+
+  
+development:
+  size: 1
+
+
+production:
+  server: production.com

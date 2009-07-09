@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>MiniCon Magazine Theme</title>
+    <title>RubyMinds</title>
     <meta name="description" content="MiniCon Magazine description goes here" />
     <meta name="author" content="Your Name and Pukeko Design Studio" />
     <meta name="keywords" content="magazine"/>
@@ -24,7 +24,7 @@
 <body>
   <div class="container_12">
     <div class="grid_4 logo">
-      <h1><a href="index.htm">MiniCon Magazine</a></h1>
+      <h1><%= link_to AppConfig.site_name, root_path %></h1>
     </div><!-- end .grid_4-->
     <div class="grid_8 header">
       <ul>
@@ -159,7 +159,7 @@
           </li>
         </ul>
       </div><!-- end .footer_3-->
-      <p class="copyright">&copy; MiniCon Magazine Theme. </p>
+      <p class="copyright">&copy; Mike Judge <%= Time.now.year %>, Theme by MiniCon Magazine Theme. </p>
     </div><!-- end .footer-->
   </div><!-- end .container_12 -->
 </body>
