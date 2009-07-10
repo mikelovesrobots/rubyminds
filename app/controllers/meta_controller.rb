@@ -1,4 +1,4 @@
-class StaticController < ApplicationController
+class MetaController < ApplicationController
   layout 'default'
 
   def index
