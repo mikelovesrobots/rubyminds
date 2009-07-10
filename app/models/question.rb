@@ -40,6 +40,10 @@ class Question
     $redis.set(redis_identity, attributes.to_json)
   end
 
+  def save_to_most_recent_list
+    $redis.lpush("Meta/most-recent-questions", redis_identity)
+  end
+
   def self.find(identity)
     if result = $redis.get("#{self}/#{identity}")
       Question.new(JSON.parse(result))
