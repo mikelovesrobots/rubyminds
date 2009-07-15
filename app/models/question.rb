@@ -65,6 +65,7 @@ class Question
   def self.[](identity)
     find(identity)
   end 
+
   def self.from_json(json)
     new(JSON.parse(json))
   end
