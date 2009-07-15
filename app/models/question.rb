@@ -45,8 +45,27 @@ class Question
   end
 
   def self.find(identity)
-    if result = $redis.get("#{self}/#{identity}")
-      Question.new(JSON.parse(result))
+    if identity.kind_of? Array
+      question_ids = Array(identity).collect { |x| "#{self}/#{x}" }
+      result = $redis.mget(*question_ids)
+      
+      if result.present?
+        result.collect { |x| x.present? ? Question.from_json(x) : nil }.compact
+      else
+        result
+      end
+    else
+      question_id = "#{self}/#{identity}"
+      if result = $redis.get(question_id)
+        Question.from_json result
+      end
     end
+  end
+  
+  def self.[](identity)
+    find(identity)
+  end 
+  def self.from_json(json)
+    new(JSON.parse(json))
   end
 end
