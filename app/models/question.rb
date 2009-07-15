@@ -44,28 +44,47 @@ class Question
     $redis.lpush("Meta/most-recent-questions", redis_identity)
   end
 
+  #
+  #   Question.find(1)
+  #   # => #<Question:0x19c830c @attributes={...}>
+  #   
+  #   Question.find([1,2,3,4])
+  #   # => [#<Question:...>, #<Question:...>, #<Question:...>, #<Question:...>]
+  #
   def self.find(identity)
     if identity.kind_of? Array
       question_ids = Array(identity).collect { |x| "#{self}/#{x}" }
       result = $redis.mget(*question_ids)
       
       if result.present?
-        result.collect { |x| x.present? ? Question.from_json(x) : nil }.compact
+        result.collect { |x| x.present? ? self.from_json(x) : nil }.compact
       else
         result
       end
     else
       question_id = "#{self}/#{identity}"
       if result = $redis.get(question_id)
-        Question.from_json result
+        self.from_json result
       end
     end
   end
   
+  # A shortcut / alias to the #find class method.
+  #
+  #   Question[1]
+  #   # => #<Question:0x19c830c @attributes={...}>
+  #   
   def self.[](identity)
     find(identity)
   end 
 
+  # Creates an instance of an object of this type from a json version
+  # of the attributes hash.  Used mainly for deserializing records from
+  # redis.
+  #
+  #   Question.from_json(json_text)
+  #   # => #<Question:...>
+  #
   def self.from_json(json)
     new(JSON.parse(json))
   end
