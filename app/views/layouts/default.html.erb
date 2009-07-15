@@ -42,10 +42,14 @@
         <a href="articles_page.htm"><img src="images/plants.jpg" alt="Plants" width="280px" height="184px" /></a>
       </div>
       <div class="home_feature_text">
-        <h2><a href="articles_page.htm">Lorem ipsum dolor</a></h2>
-        <h3>Sed diam nonumy eirmod tempor invidunt.</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+        <% if @recent_questions.present? %>
+          <h2><%= link_to @recent_questions.first.attributes["title"] || AppConfig.questions.not_found_title, "#" %></h2>
+          <p><%= h @recent_questions.first.attributes["question"] || AppConfig.questions.not_found_question %></p>
+          <span class="bigLink"><%= link_to "Read", "#" %></span>
+        <% else %>
+          <h2><%= h AppConfig.questions.not_found_title %></h2>
+          <p><%= h AppConfig.questions.not_found_question %></p>
+        <% end %>
       </div>
     </div><!-- end .grid_12-->
     <div class="clear">&nbsp;</div>
