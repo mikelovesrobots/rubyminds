@@ -1,6 +1,17 @@
 defaults:
   site_name: "RubyMinds"
- 
+  questions:
+    not_found_title: "[Untitled]"
+    not_found_question: "[No Question]"
+    not_found_answer: "[No answer]" 
+  image_dimensions:
+    featured:
+      width: 280
+      height: 184
+    front_page:
+      width: 140
+      height: 92
+   
 development:
 
 staging:
