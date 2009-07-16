@@ -77,15 +77,19 @@
     </div><!-- end .grid_4-->
     <div class="grid_8">
       <h2 class="title">Feature Articles</h2>
-      <% @recent_questions.each do |question| %>
-        <div class="home_article_photo">
-          <a href="articles_page.htm"><%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %></a>
-        </div>
-        <div class="home_article_text">
-          <h3><a href="articles_page.htm"><%= h question.title %></a></h3>
-          <p><%= h question.question %></p>
-          <span class="bigLink"><a href="articles_page.htm">Read</a></span>
-        </div>
+      <% if @recent_questions.present? %>
+        <% @recent_questions.each do |question| %>
+          <div class="home_article_photo">
+            <a href="articles_page.htm"><%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %></a>
+          </div>
+          <div class="home_article_text">
+            <h3><a href="articles_page.htm"><%= h question.title %></a></h3>
+            <p><%= h question.question %></p>
+            <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+          </div>
+        <% end %>
+      <% else %>
+        <h3>No recent questions available</h3>
       <% end %>
       <span class="bigLink clear_soft"><a href="articles_page.htm">More Articles</a></span>
       <div class="clear_soft"></div>
