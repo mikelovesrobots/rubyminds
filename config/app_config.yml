@@ -1,5 +1,8 @@
 defaults:
   site_name: "RubyMinds"
+  twitter:
+    home_url: "http://twitter.com/mikelovesrobots"
+    
   questions:
     not_found_title: "[Untitled]"
     not_found_question: "[No Question]"

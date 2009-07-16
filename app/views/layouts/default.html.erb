@@ -55,7 +55,7 @@
     <div class="clear">&nbsp;</div>
     <div class="grid_4">
       <h3 class="home_heading3">Welcome</h3>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+      <p>RubyMinds is the central storage for Mike Judge's rants, and question and answer sessions.</p>
       <h3 class="home_heading3">Latest Tweets</h3>
       <% @recent_tweets.each do |tweet| %>
         <span class="comments_details"><%= Time.parse(tweet.created_at).to_s(:long) %></span>
@@ -130,15 +130,14 @@
         </ul>
       </div><!-- end .footer_2-->
       <div class="footer_3">
-        <h4>MiniCon Magazine</h4>
+        <h4>RubyMinds</h4>
         <ul>
           <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
         </ul>
-        <h4>Newsletter Signup</h4>
+        <h4>Twitter</h4>
         <ul>
           <li>
-          Receive regular updates, news and competition info.<br/>
-          <input name="newsletter" type="text" value="your email address" class="footer_newsletter" />&nbsp;&nbsp;<input name="newsletter_submit" type="submit" value="Go" class="footer_newsletter_button" />
+          You should follow me on twitter <%= link_to "here", AppConfig.twitter.home_url %> 
           </li>
         </ul>
       </div><!-- end .footer_3-->
