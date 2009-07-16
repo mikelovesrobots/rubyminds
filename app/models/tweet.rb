@@ -8,7 +8,7 @@ class Tweet < RedisModel
   end
 
   def self.import
-    search = Twitter::Search.new.from('mikelovesrobots').since(last_tweet_id)
+    search = Twitter::Search.new.from('mikelovesrobots').since(last_tweet_identity)
     search.each do |result| 
       attributes = {
         'identity' => result["id"],
@@ -20,12 +20,12 @@ class Tweet < RedisModel
     end
   end
 
-  # Returns the most recent Twitter tweet id in the database
+  # Returns the most recent Twitter tweet id from the database
+  # 
+  #   Tweet.last_tweet_identity
+  #   # => 2661814374
   #
-  #   Tweet.last_tweet_id
-  #   # => 0
-  #
-  def self.last_tweet_id
-    0
+  def self.last_tweet_identity
+    last.first.try(:identity) || 0
   end
 end
