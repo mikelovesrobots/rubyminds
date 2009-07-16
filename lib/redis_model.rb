@@ -94,13 +94,17 @@ class RedisModel
   #
   def self.find(identity)
     if identity.kind_of? Array
-      record_ids = Array(identity).collect { |x| redis_identity(x) }
-      result = $redis.mget(*record_ids)
-      
-      if result.present?
-        result.collect { |x| x.present? ? self.from_json(x) : nil }.compact
+      if identity.empty?
+        []
       else
-        result
+        record_ids = Array(identity).collect { |x| redis_identity(x) }
+        result = $redis.mget(*record_ids)
+        
+        if result.present?
+          result.collect { |x| x.present? ? self.from_json(x) : nil }.compact
+        else
+          result
+        end
       end
     else
       question_id = redis_identity(identity)

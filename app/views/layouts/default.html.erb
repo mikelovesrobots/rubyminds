@@ -56,18 +56,12 @@
     <div class="grid_4">
       <h3 class="home_heading3">Welcome</h3>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-      <h3 class="home_heading3">Latest News</h3>
-      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
-      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
-      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
-      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
-      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
-      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
-      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
-      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
-      <span class="comments_details">Wed 17th June 2009 @ 1.10pm</span>
-      <p><a href="news_page.htm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a></p>
-      <span class="bigLink"><a href="articles_page.htm">More News</a></span>
+      <h3 class="home_heading3">Latest Tweets</h3>
+      <% @recent_tweets.each do |tweet| %>
+        <span class="comments_details"><%= Time.parse(tweet.created_at).to_s(:long) %></span>
+        <p><%= link_to_tweet tweet.text, tweet.identity %></p>
+      <% end %>
+      <span class="bigLink"><%= link_to "More Tweets", "http://twitter.com/mikelovesrobots" %></span>
       <h3 class="home_heading3">Latest Comments</h3>
       <span class="comments_details">Posted in <strong><a href="#">Article 1</a></strong>:</span>
       <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&#8221;</em><br />
@@ -129,7 +123,7 @@
     <div class="clear">&nbsp;</div>
     <div class="footer clearfix">
       <div class="footer_1">
-        <h4>Latest Tweets</h4>
+        <h4>Latest News</h4>
         <ul>
           <li><a href="#">News Title</a></li>
           <li><a href="#">News Title</a></li>
