@@ -131,7 +131,7 @@ class RedisModel
   end
 
   def self.last_ids(n = 1)
-    $redis.lrange redis_most_recent_list_identity, 0, n
+    $redis.lrange redis_most_recent_list_identity, 0, n - 1
   end
 
   def self.last(n = 1)
