@@ -1,4 +1,7 @@
 class RedisModel
+  extend SavedAttributes
+  saved_attributes :identity, :created_at
+
   def initialize(params={})
     before_initialize
     params.each { |key, value| self.send("#{key}=", value) }
@@ -21,22 +24,6 @@ class RedisModel
 
   def attributes
     @attributes ||= {}
-  end
-
-  def identity
-    attributes["identity"]
-  end
-
-  def identity=(value)
-    attributes["identity"] = value
-  end
-
-  def created_at
-    attributes["created_at"] 
-  end
-
-  def created_at=(value)
-    attributes["created_at"] = value
   end
   
   # Saves the attributes hash to the redis database

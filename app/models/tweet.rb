@@ -1,11 +1,5 @@
 class Tweet < RedisModel
-  def text
-    attributes['text']
-  end
-
-  def text=(value)
-    attributes['text'] = value
-  end
+  saved_attribute :text
 
   def self.import
     search = Twitter::Search.new.from('mikelovesrobots').since(last_tweet_identity)
