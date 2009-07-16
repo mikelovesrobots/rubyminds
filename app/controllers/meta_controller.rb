@@ -2,8 +2,8 @@ class MetaController < ApplicationController
   layout 'default'
 
   def index
-    @recent_questions = Question.last(4)
-    @featured_question = @recent_questions.shift
+    @recent_articles = Article.last(5)
+    @featured_article = @recent_articles.shift
     @recent_tweets    = Tweet.last(5)
     render :text => "ok", :layout => true
   end
