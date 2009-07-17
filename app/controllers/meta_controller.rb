@@ -6,4 +6,7 @@ class MetaController < ApplicationController
     @featured_article = @recent_articles.shift
     @recent_tweets    = Tweet.last(5)
   end
+
+  def about
+  end
 end
