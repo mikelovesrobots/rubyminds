@@ -1,0 +1,60 @@
+<div class="home_feature clearfix">
+  <div class="home_feature_photo">
+    <a href="articles_page.htm"><img src="images/plants.jpg" alt="Plants" width="280px" height="184px" /></a>
+  </div>
+  <div class="home_feature_text">
+    <% if @featured_article.present? %>
+      <h2><%= link_to @featured_article.title || AppConfig.articles.not_found_title, "#" %></h2>
+      <p><%= h @featured_article.blurb || AppConfig.articles.not_found_blurb %></p>
+      <span class="bigLink"><%= link_to "Read", "#" %></span>
+    <% else %>
+      <h2><%= h AppConfig.articles.not_found_title %></h2>
+      <p><%= h AppConfig.articles.not_found_blurb %></p>
+    <% end %>
+  </div>
+</div><!-- end .grid_12-->
+<div class="clear">&nbsp;</div>
+<div class="grid_4">
+  <h3 class="home_heading3">Welcome</h3>
+  <p>RubyMinds is the central storage for Mike Judge's rants, and article and answer sessions.</p>
+  <h3 class="home_heading3">Latest Tweets</h3>
+  <% @recent_tweets.each do |tweet| %>
+    <span class="comments_details"><%= Time.parse(tweet.created_at).to_s(:long) %></span>
+    <p><%= link_to_tweet tweet.text, tweet.identity %></p>
+  <% end %>
+  <span class="bigLink"><%= link_to "More Tweets", "http://twitter.com/mikelovesrobots" %></span>
+  <h3 class="home_heading3">Latest Comments</h3>
+  <span class="comments_details">Posted in <strong><a href="#">Article 1</a></strong>:</span>
+  <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&#8221;</em><br />
+  by John Smith</p>
+  <span class="comments_details">Posted in <strong><a href="#">News Title  1</a></strong>:</span>
+  <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&#8221;</em><br />
+  by John Smith</p>
+  <span class="comments_details">Posted in <strong><a href="#">Photo Set 1</a></strong>:</span>
+  <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy sed diam voluptua.&#8221;</em><br />
+  by John Smith</p>
+  <span class="comments_details">Posted in <strong><a href="#">Article 2</a></strong>:</span>
+  <p><em>&#8220;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&#8221;</em><br />
+  by John Smith</p>
+</div><!-- end .grid_4-->
+<div class="grid_8">
+  <h2 class="title">Feature Articles</h2>
+  <% if @recent_articles.present? %>
+    <% @recent_articles.each do |article| %>
+      <div class="home_article_photo">
+        <a href="articles_page.htm"><%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %></a>
+      </div>
+      <div class="home_article_text">
+        <h3><a href="articles_page.htm"><%= h article.title %></a></h3>
+        <p><%= h article.blurb %></p>
+        <span class="bigLink"><a href="articles_page.htm">Read</a></span>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>No featured articles are currently available</h3>
+  <% end %>
+  <span class="bigLink clear_soft"><a href="articles_page.htm">More Articles</a></span>
+  <div class="clear_soft"></div>
+</div><!-- end .grid_8-->
+<div class="clear">&nbsp;</div>
+
