@@ -53,12 +53,11 @@
       <div class="footer_2">
         <h4>Site Links</h4>
         <ul>
-          <li><a href="index.htm">Home</a></li>
-          <li><a href="photos.htm">Photos</a></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><a href="articles.htm">Articles</a></li>
-          <li><a href="news.htm">News</a></li>
-          <li><a href="about.htm">About</a></li>
-          <li><a href="contact.htm">Contact</a></li>
+          <li><%= link_to "Twitter", AppConfig.twitter.home_url %></li>
+          <li><%= link_to "About", :controller => :meta, :action => :about %></li>
+          <li><%= link_to "Contact", :controller => :meta, :action => :contact %></li>
         </ul>
       </div><!-- end .footer_2-->
       <div class="footer_3">
