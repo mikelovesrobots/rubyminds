@@ -33,7 +33,7 @@
         <li><a href="articles.htm">Articles</a></li>
         <li><%= link_to "Twitter", AppConfig.twitter.home_url %></li>
         <li><%= link_to_with_current "About", :controller => :meta, :action => :about %></li>
-        <li><a href="contact.htm">Contact</a></li>
+        <li><%= link_to_with_current "Contact", :controller => :meta, :action => :contact %></li>
       </ul>
     </div><!-- end .grid_8-->
     <div class="clear">&nbsp;</div>
