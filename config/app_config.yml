@@ -1,5 +1,8 @@
 defaults:
   site_name: "RubyMinds"
+  author_name: "Mike Judge"
+  canonical_url: "http://rubyminds.com"
+  site_description: "I did this all to save you from yourselves"
   twitter:
     home_url: "http://twitter.com/mikelovesrobots"
     
