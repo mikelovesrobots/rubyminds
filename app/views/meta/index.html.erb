@@ -4,7 +4,7 @@
   </div>
   <div class="home_feature_text">
     <% if @featured_article.present? %>
-      <h2><%= link_to @featured_article.title || AppConfig.articles.not_found_title, "#" %></h2>
+      <h2><%= link_to @featured_article.title || AppConfig.articles.not_found_title, @featured_article.url %></h2>
       <%= @featured_article.blurb || AppConfig.articles.not_found_blurb %>
     <% else %>
       <h2><%= h AppConfig.articles.not_found_title %></h2>
@@ -44,7 +44,7 @@
         <a href="articles_page.htm"><%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %></a>
       </div>
       <div class="home_article_text">
-        <h3><a href="articles_page.htm"><%= h article.title %></a></h3>
+        <h3><%= link_to article.title, article.url %></h3>
         <%= article.blurb %>
       </div>
     <% end %>
