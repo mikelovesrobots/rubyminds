@@ -5,11 +5,11 @@
   <div class="home_feature_text">
     <% if @featured_article.present? %>
       <h2><%= link_to @featured_article.title || AppConfig.articles.not_found_title, "#" %></h2>
-      <p><%= h @featured_article.blurb || AppConfig.articles.not_found_blurb %></p>
+      <%= @featured_article.blurb || AppConfig.articles.not_found_blurb %>
       <span class="bigLink"><%= link_to "Read", "#" %></span>
     <% else %>
       <h2><%= h AppConfig.articles.not_found_title %></h2>
-      <p><%= h AppConfig.articles.not_found_blurb %></p>
+      <%= h AppConfig.articles.not_found_blurb %>
     <% end %>
   </div>
 </div><!-- end .grid_12-->
@@ -46,7 +46,7 @@
       </div>
       <div class="home_article_text">
         <h3><a href="articles_page.htm"><%= h article.title %></a></h3>
-        <p><%= h article.blurb %></p>
+        <%= h article.blurb %>
         <span class="bigLink"><a href="articles_page.htm">Read</a></span>
       </div>
     <% end %>

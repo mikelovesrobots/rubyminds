@@ -5,6 +5,10 @@ defaults:
   site_description: "I did this all to save you from yourselves"
   twitter:
     home_url: "http://twitter.com/mikelovesrobots"
+
+  delicious:
+    username: "mikelovesrobots"
+    password: "bell3vue"
     
   articles:
     not_found_title: "[Untitled]"

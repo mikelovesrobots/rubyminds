@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
 
   config.gem "ezmobius-redis-rb", :lib => "redis", :source => "gems.github.com"
   config.gem 'twitter', :version => '>=0.6.1'
+  config.gem 'www-delicious', :lib => "www/delicious", :version => '>=0.3.0'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
