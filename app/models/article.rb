@@ -6,7 +6,7 @@
 #   - small: 140x92
 #
 class Article < RedisModel
-  saved_attributes :title, :blurb, :images, :url
+  saved_attributes :title, :blurb, :images, :url, :tags
 
   def self.import
     connection = WWW::Delicious.new(AppConfig.delicious.username, AppConfig.delicious.password)
@@ -16,9 +16,9 @@ class Article < RedisModel
           :identity => post.uid,
           :title => post.title,
           :url => post.url.to_s,
-          :blurb => post.notes
+          :blurb => post.notes,
+          :tags => post.tags
         ).save
-        # there's also post.tags => ["tools"]
       end
     end 
   end
