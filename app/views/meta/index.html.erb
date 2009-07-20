@@ -1,6 +1,6 @@
 <div class="home_feature clearfix">
   <div class="home_feature_photo">
-    <a href="articles_page.htm"><img src="images/plants.jpg" alt="Plants" width="280px" height="184px" /></a>
+    <img src="images/plants.jpg" alt="Plants" width="280px" height="184px" />
   </div>
   <div class="home_feature_text">
     <% if @featured_article.present? %>
@@ -43,7 +43,7 @@
   <% if @recent_articles.present? %>
     <% @recent_articles.each do |article| %>
       <div class="home_article_photo">
-        <a href="articles_page.htm"><%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %></a>
+        <%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %>
       </div>
       <div class="home_article_text">
         <h3><%= link_to article.title, article.url %></h3>
