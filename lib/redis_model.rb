@@ -118,7 +118,7 @@ class RedisModel
   #   # => #<Question:...>
   #
   def self.from_json(json)
-    new(JSON.parse(json))
+    new(ActiveSupport::JSON.decode(json))
   end
 
   def self.last_ids(n = 1)
