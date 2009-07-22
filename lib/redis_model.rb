@@ -67,7 +67,11 @@ class RedisModel
 
   # Saves this record to the most_recent_list for this class
   def save_to_most_recent_list
-    $redis.lpush(self.class.redis_most_recent_list_identity, identity)
+    # potentially, really slow dupe checking
+    most_recent_identity = self.class.redis_most_recent_list_identity
+    unless $redis.lrange(most_recent_identity, 0, $redis.llen(most_recent_identity)).include? identity
+      $redis.lpush(most_recent_identity, identity)
+    end
   end
 
   # Retrieves a record (or number of records in a convenient and efficient multi-get) 
