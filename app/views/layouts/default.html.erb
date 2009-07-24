@@ -2,8 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>RubyMinds</title>
-    <meta name="author" content="Mike Judge and RubyMinds" />
+    <% if @title.present? %>
+      <title><%= @title %></title>
+    <% end %>
+    <meta name="author" content="Mike Judge of RubyMinds" />
     <% if @keywords.present? %>
       <meta name="keywords" content="<%= @keywords.to_sentence %>"/>
     <% end %>
