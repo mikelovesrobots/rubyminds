@@ -8,11 +8,11 @@ xml.rss(:version=>"2.0"){
       @articles.each do |article|
         xml.item do
           xml.title(article.title)
-          xml.description(article.body)      
+          xml.description(article.blurb)      
           xml.author(AppConfig.author_name)
           xml.pubDate(Time.parse(article.created_at).strftime("%a, %d %b %Y %H:%M:%S %z"))
-          xml.link(url_for(:controller => "articles", :action => "show", :id => @article.identity))
-          xml.guid(url_for(:controller => "articles", :action => "show", :id => @article.identity))
+          xml.link(article.url)
+          xml.guid(article.identity)
         end
       end
   }
