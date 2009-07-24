@@ -9,5 +9,10 @@ class MetaController < ApplicationController
   end
 
   def about
+    @title = "About #{AppConfig.author_name}"
+  end
+
+  def contact
+    @title = "Contact #{AppConfig.author_name}"
   end
 end

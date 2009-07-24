@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   def set_default_meta_tags
     @keywords = []
     @description = ''
-    @title = AppConfig.site_name
+    @title = ''
   end
 end

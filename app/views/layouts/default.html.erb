@@ -2,9 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <% if @title.present? %>
-      <title><%= @title %></title>
-    <% end %>
+    <title><%= AppConfig.site_name %><% if @title.present? %> - <%= @title %><% end %></title>
     <meta name="author" content="Mike Judge of RubyMinds" />
     <% if @keywords.present? %>
       <meta name="keywords" content="<%= @keywords.to_sentence %>"/>
