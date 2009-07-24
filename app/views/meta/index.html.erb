@@ -6,6 +6,7 @@
     <% if @featured_article.present? %>
       <h2><%= link_to @featured_article.title || AppConfig.articles.not_found_title, @featured_article.url %></h2>
       <%= @featured_article.blurb || AppConfig.articles.not_found_blurb %>
+      <span class="bigLink"><%= link_to "View Link", @featured_article.url %></span>
     <% else %>
       <h2><%= h AppConfig.articles.not_found_title %></h2>
       <%= h AppConfig.articles.not_found_blurb %>
@@ -48,6 +49,7 @@
       <div class="home_article_text">
         <h3><%= link_to article.title, article.url %></h3>
         <%= article.blurb %>
+        <span class="bigLink"><%= link_to "View Link", article.url %></span>
       </div>
     <% end %>
     <span class="bigLink clear_soft"><a href="articles_page.htm">More Articles</a></span>
