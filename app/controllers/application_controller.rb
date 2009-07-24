@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  before_filter :set_default_meta_tags
+
+  def set_default_meta_tags
+    @keywords = []
+    @description = ''
+  end
 end

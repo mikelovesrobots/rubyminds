@@ -4,9 +4,11 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>RubyMinds</title>
     <meta name="author" content="Mike Judge and RubyMinds" />
+    <% if @keywords.present? %>
+      <meta name="keywords" content="<%= @keywords.to_sentence %>"/>
+    <% end %>
     <% if false %>
       <meta name="description" content="MiniCon Magazine description goes here" />
-      <meta name="keywords" content="magazine"/>
       <link rel="shortcut icon" href="favicon.ico" />
     <% end %>
     <meta name="verify-v1" content="8ctiHzQ7lolaCt1iiGhTJI04cplt4MLxrxLI5i6tDkw=" >
