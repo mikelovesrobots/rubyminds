@@ -3,7 +3,7 @@ class Tweet < RedisModel
 
   def self.import
     search = Twitter::Search.new.from('mikelovesrobots').since(last_tweet_identity)
-    search.each do |result| 
+    search.reverse.each do |result| 
       attributes = {
         'identity' => result["id"],
         'text'       => result["text"],
