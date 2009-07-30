@@ -54,7 +54,7 @@
         <span class="bigLink"><%= link_to "View Website", article.url %></span>
       </div>
     <% end %>
-    <span class="bigLink clear_soft"><a href="articles_page.htm">More Links</a></span>
+    <span class="bigLink clear_soft"><%= link_to "More Links", :controller => :archives, :action => :index %></span>
   <% else %>
     <p>No featured articles are currently available</p>
   <% end %>

@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArchivesController < ApplicationController
   layout 'default'
 
   def index
