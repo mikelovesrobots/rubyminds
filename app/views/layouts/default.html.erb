@@ -35,7 +35,7 @@
     <div class="grid_8 header">
       <ul>
         <li><%= link_to_with_current "Home", root_path %></li>
-        <li><a href="articles.htm">Articles</a></li>
+        <li><%= link_to_with_current "Articles", :controller => :articles, :action => :index %></li>
         <li><%= link_to "Twitter", AppConfig.twitter.home_url %></li>
         <li><%= link_to_with_current "About", :controller => :meta, :action => :about %></li>
         <li><%= link_to_with_current "Contact", :controller => :meta, :action => :contact %></li>
@@ -48,7 +48,7 @@
         <h4>Site Links</h4>
         <ul>
           <li><%= link_to "Home", root_path %></li>
-          <li><a href="articles.htm">Articles</a></li>
+          <li><%= link_to "Articles", :controller => :articles, :action => :index %></li>
           <li><%= link_to "Twitter", AppConfig.twitter.home_url %></li>
           <li><%= link_to "About", :controller => :meta, :action => :about %></li>
           <li><%= link_to "Contact", :controller => :meta, :action => :contact %></li>

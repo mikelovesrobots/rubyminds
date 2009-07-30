@@ -1,0 +1,30 @@
+<div class="grid_12">
+  <h2 class="title">Articles</h2>
+</div><!-- end .grid_12-->
+<% @articles.each do |article| %>
+  <div class="grid_4">
+    <p class="article_details"><%= time_ago_in_words Time.parse(article.created_at) %> ago<br />
+      by Mike Judge</p>
+  </div><!-- end .grid_4-->
+  <div class="grid_2">
+    <%= link_to image_tag(article.image_path(:thumb), :alt => article.image_base, :width => "140px", :height => "92px", :class => "photos_thumb"), article.url %>
+  </div><!-- end .grid_2-->
+  <div class="grid_6">
+    <h3><%= link_to article.title, article.url %></h3>
+    <%= article.blurb %>
+    <span class="bigLink"><%= link_to "Visit Website", article.url %></span>
+  </div><!-- end .grid_6-->
+  <div class="clear margin_40">&nbsp;</div>
+<% end %>
+<% if false %>
+  <div class="grid_12">
+    <p><em>Page 1 of 5</em>&nbsp;&nbsp;&#8212;&nbsp;&nbsp;<a href="#">2</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">3</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">4</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">5</a></p>
+  </div><!-- end .grid_12-->
+  <div class="grid_left">
+    <span class="bigLink"><a href="#">Previous Page</a></span>
+  </div><!-- end .grid_left-->
+  <div class="grid_right">
+    <span class="bigLink"><a href="#">Next Page</a></span>
+  </div><!-- end .grid_right-->
+  <div class="clear">&nbsp;</div>
+<% end %>

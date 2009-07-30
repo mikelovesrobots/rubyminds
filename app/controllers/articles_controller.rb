@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  layout 'default'
+
   def index
     @articles = Article.last(10)
     respond_to do |format|
