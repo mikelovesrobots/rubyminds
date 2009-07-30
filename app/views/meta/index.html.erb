@@ -1,6 +1,8 @@
 <div class="home_feature clearfix">
   <div class="home_feature_photo">
-    <img src="images/plants.jpg" alt="Plants" width="280px" height="184px" />
+    <% if @featured_article.present? %>
+      <%= image_tag @featured_article.image_path(:featured), :alt => @featured_article.image_base, :width => "280px", :height => "184px" %>
+    <% end %>
   </div>
   <div class="home_feature_text">
     <% if @featured_article.present? %>
@@ -44,7 +46,7 @@
   <% if @recent_articles.present? %>
     <% @recent_articles.each do |article| %>
       <div class="home_article_photo">
-        <%= image_tag "sunset.jpg", :alt => "sunset", :width => "140px", :height => "92px", :class => "floatLeft" %>
+        <%= image_tag article.image_path(:thumb), :alt => article.image_base, :width => "140px", :height => "92px", :class => "floatLeft" %>
       </div>
       <div class="home_article_text">
         <h3><%= link_to article.title, article.url %></h3>

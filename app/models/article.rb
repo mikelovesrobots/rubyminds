@@ -1,12 +1,14 @@
 #
 # image sizes:
 #
-#   - full: 300x197
+#   - detailed: 300x197
 #   - featured: 280x184
-#   - small: 140x92
+#   - thumb: 140x92
 #
 # 
 class Article < RedisModel
+  IMAGES = [:forest_fall, :forest_twilight, :forest_earthy, :leaves_blurry, :forest_path, :trees_lake]
+
   saved_attributes :title, :blurb, :images, :url, :tags
 
   def self.import
@@ -22,5 +24,14 @@ class Article < RedisModel
         ).save
       end
     end 
+  end
+
+  # 300x197
+  def image_path(type)
+    "#{image_base}_#{type}.jpg"
+  end
+
+  def image_base
+    IMAGES[title.length % IMAGES.length]
   end
 end
