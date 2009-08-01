@@ -2,7 +2,7 @@ class ImportsController < ApplicationController
   def all
     Tweet.import
     Article.import
-    render :text => "ok", :layout => false
+    redirect_to root_path
   end
 
   def twitter
