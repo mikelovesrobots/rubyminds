@@ -8,7 +8,7 @@ defaults:
 
   delicious:
     username: "mikelovesrobots"
-    password: "bell3vue"
+    password: ""
     
   articles:
     not_found_title: "[Untitled]"
