@@ -132,4 +132,17 @@ class RedisModel
   def self.last(n = 1)
     find(last_ids(n))
   end
+  
+  def self.paginate_ids(page = 1, per_page = 10)
+    page = 1 if page < 1
+
+    starting_index = ((page.to_i - 1) * per_page.to_i)
+    ending_index = starting_index + per_page.to_i - 1
+
+    $redis.lrange redis_most_recent_list_identity, starting_index, ending_index
+  end
+
+  def self.paginate(page = 1, per_page = 10)
+    find(paginate_ids(page, per_page))
+  end
 end
