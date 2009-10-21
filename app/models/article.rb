@@ -12,7 +12,7 @@ class Article < RedisModel
   saved_attributes :title, :blurb, :images, :url, :tags
 
   def self.import
-    connection = WWW::Delicious.new(AppConfig.delicious.username, AppConfig.delicious.password)
+    connection = WWW::Delicious.new(ENV['RUBYMINDS_DELICIOUS_USERNAME'], ENV['RUBYMINDS_DELICIOUS_PASSWORD'])
     connection.posts_all.reverse.each do |post|
       unless Article.find(post.uid)
         Article.new(
