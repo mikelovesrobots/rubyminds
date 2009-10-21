@@ -2,7 +2,7 @@ class ArchivesController < ApplicationController
   layout 'default'
 
   def index
-    @articles = Article.last(10)
+    @articles = Article.last(20)
     respond_to do |format|
       format.html {}
       format.rss do
