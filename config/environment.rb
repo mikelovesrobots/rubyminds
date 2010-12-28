@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
-  config.gem "ezmobius-redis-rb", :lib => "redis", :source => "gems.github.com"
+  config.gem "redis"
   config.gem 'twitter', :version => '=0.7.0'
   config.gem 'www-delicious', :lib => "www/delicious", :version => '>=0.3.0'
 
