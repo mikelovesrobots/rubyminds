@@ -6,12 +6,11 @@ set :repository,  "git@github.com:mikelovesrobots/#{application}.git"
 # via the :deploy_to variable:
 # set :deploy_to, "/var/www/#{application}"
 
-set :deploy_to, "/mnt/sites/#{application}"
+set :deploy_to, "/var/www/#{application}"
 
 # Set to pull from the environment until I can figure out how to avoid
 # publishing this.  Funny that ENV is safer than just writing it here.
-set :user, ENV['RUBYMINDS_SERVER_USERNAME']
-set :password, ENV['RUBYMINDS_SERVER_PASSWORD']
+set :user, 'ubuntu'
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
